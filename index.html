@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Connexion Google Agenda</title>
 </head>
 <body>
@@ -12,18 +12,16 @@
 
 <script>
 const CLIENT_ID = "180012005962-kej8o0ko1bhasnct8mhk4iss51ildb9t.apps.googleusercontent.com";
-
-const REDIRECT_URI = "https://wgastrin-cloud.github.io/mini-site-agenda/";
-
-const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+const REDIRECT_URI = "https://wgastin-cloud.github.io/mini-site-agenda/";
+const SCOPE = "https://www.googleapis.com/auth/calendar.readonly";
 
 function login() {
   const url = 
     "https://accounts.google.com/o/oauth2/v2/auth" +
     "?client_id=" + CLIENT_ID +
-    "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
+    "&redirect_uri=" + REDIRECT_URI +
     "&response_type=token" +
-    "&scope=" + encodeURIComponent(SCOPES);
+    "&scope=" + SCOPE;
 
   window.location.href = url;
 }
@@ -31,5 +29,3 @@ function login() {
 
 </body>
 </html>
-
-
