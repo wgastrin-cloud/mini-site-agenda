@@ -1,33 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<meta charset="utf-8">
-<title>Connexion Google Agenda</title>
+  <meta charset="UTF-8">
+  <title>Connexion Google Agenda</title>
 </head>
 <body>
 
-<h2>Connexion agenda client</h2>
+<h2>Connexion agenda nettoyage bureaux</h2>
 
-<button onclick="login()">Connecter mon agenda Google</button>
+<button onclick="login()">Se connecter avec Google</button>
 
 <script>
-
 const CLIENT_ID = "180012005962-kej8o0ko1bhasnct8mhk4iss51ildb9t.apps.googleusercontent.com";
-const REDIRECT_URI = "http://localhost:5500";
+
+const REDIRECT_URI = "https://wgastrin-cloud.github.io/mini-site-agenda/";
+
 const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
 function login() {
-  const url =
+  const url = 
     "https://accounts.google.com/o/oauth2/v2/auth" +
     "?client_id=" + CLIENT_ID +
-    "&redirect_uri=" + REDIRECT_URI +
+    "&redirect_uri=" + encodeURIComponent(REDIRECT_URI) +
     "&response_type=token" +
-    "&scope=" + SCOPES;
+    "&scope=" + encodeURIComponent(SCOPES);
 
   window.location.href = url;
 }
-
 </script>
 
 </body>
 </html>
+
+
